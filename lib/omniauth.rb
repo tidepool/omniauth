@@ -20,6 +20,10 @@ module OmniAuth
     @@strategies ||= []
   end
 
+  def self.all_strategies
+    @@all_strategies ||= []
+  end
+
   class Configuration
     include Singleton
 

@@ -40,6 +40,7 @@ module OmniAuth
           raise LoadError, "Could not find matching strategy for #{klass.inspect}. You may need to install an additional gem (such as omniauth-#{klass})."
         end
       end
+      OmniAuth.all_strategies << middleware
 
       args.last.is_a?(Hash) ? args.push(options.merge(args.pop)) : args.push(options)
       use middleware, *args, &block
